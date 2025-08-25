@@ -1,19 +1,20 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react'; // Import Menu and X icons
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // New state for mobile menu
   const pathname = usePathname();
 
   useEffect(() => {
     // Check for saved theme preference or default to system preference
     const savedTheme = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
-    const prefersDark = typeof window !== 'undefined' 
-      ? window.matchMedia('(prefers-color-scheme: dark)').matches 
+    const prefersDark = typeof window !== 'undefined'
+      ? window.matchMedia('(prefers-color-scheme: dark)').matches
       : false;
 
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
@@ -48,7 +49,7 @@ export default function Header() {
               Khalid Ragab - Software Engineer
             </h1>
           </div>
-          
+
           <nav className="hidden md:flex items-center space-x-2">
             {[
               { name: 'Home', href: '/' },
@@ -72,7 +73,7 @@ export default function Header() {
                   {!isActive && (
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-indigo-600/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   )}
-                  <div 
+                  <div
                     className={`absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 transition-all duration-300 ${
                       isActive ? 'w-8' : 'w-0 group-hover:w-6'
                     }`}
@@ -81,7 +82,7 @@ export default function Header() {
               );
             })}
           </nav>
-          
+
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleTheme}
@@ -94,17 +95,44 @@ export default function Header() {
                 <Moon className="h-5 w-5 text-accent-foreground" />
               )}
             </button>
-            
-            <button className="md:hidden p-2 rounded-lg bg-accent hover:bg-muted transition-colors">
-              <div className="w-5 h-5 flex flex-col justify-center items-center">
-                <span className="block w-4 h-0.5 bg-accent-foreground mb-1"></span>
-                <span className="block w-4 h-0.5 bg-accent-foreground mb-1"></span>
-                <span className="block w-4 h-0.5 bg-accent-foreground"></span>
-              </div>
+
+            {/* Mobile Menu Button with state */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg bg-accent hover:bg-muted transition-colors"
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-5 w-5 text-accent-foreground" />
+              ) : (
+                <Menu className="h-5 w-5 text-accent-foreground" />
+              )}
             </button>
           </div>
         </div>
       </div>
+      
+      {/* Conditionally rendered Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden flex flex-col space-y-2 p-4 border-t border-border bg-background">
+          {[
+            { name: 'Home', href: '/' },
+            { name: 'About', href: '/about' },
+            { name: 'Projects', href: '/projects' },
+            { name: 'Services', href: '/services' },
+            { name: 'Contact', href: '/contact' }
+          ].map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              onClick={() => setIsMobileMenuOpen(false)} // Close the menu when a link is clicked
+              className="block px-4 py-2 rounded-xl text-foreground hover:bg-muted"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      )}
     </header>
   );
 }

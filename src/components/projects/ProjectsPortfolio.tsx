@@ -443,7 +443,7 @@ export default function ProjectsPortfolio() {
                     </motion.a>
                     
                     <motion.a
-                      href="https://github.com/BasharatJS?tab=repositories"
+                      href="https://github.com/khaledragab1998/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-xl border border-border bg-card hover:bg-accent transition-all duration-300"

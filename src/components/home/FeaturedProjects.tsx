@@ -248,9 +248,7 @@ export default function FeaturedProjects() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span className="relative z-10">
-                      View Project Details
-                    </span>
+                    
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                       animate={{ x: ['-100%', '100%'] }}
