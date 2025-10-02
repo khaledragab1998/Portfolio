@@ -162,6 +162,57 @@ export default function ProjectsPortfolio() {
       link: 'http://www.globaladvice-eg.com/',
       features: ['Service Showcase', 'Contact Information', 'Responsive Design', 'About Us Section'],
     },
+    {
+      id: 8,
+      title: 'TIG-EG Civil Engineering',
+      category: 'Civil Engineering',
+      type: 'Corporate Website',
+      description: 'A professional website for tig-eg.com, a civil engineering company showcasing their construction projects, services, and expertise in infrastructure development.',
+      fullDescription: 'A comprehensive corporate website built for TIG-EG, a leading civil engineering company. The site features project galleries, service descriptions, team information, and contact details, designed to establish credibility and attract potential clients.',
+      image: 'from-slate-600 to-slate-800',
+      tech: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+      gradientFrom: '#475569',
+      gradientTo: '#1e293b',
+      icon: <Building className="w-full h-full text-white" />,
+      status: 'Completed',
+      duration: '3 months',
+      link: 'https://tig-eg.com',
+      features: ['Project Gallery', 'Service Portfolio', 'Team Profiles', 'Contact Forms'],
+    },
+    {
+      id: 9,
+      title: 'Mazagangy Turkish Coffee Store',
+      category: 'E-commerce',
+      type: 'Online Store',
+      description: 'An elegant e-commerce website for Mazagangy.com, specializing in authentic Turkish coffee products with a focus on traditional brewing methods and premium quality.',
+      fullDescription: 'A sophisticated online store for Mazagangy, featuring Turkish coffee products, brewing equipment, and accessories. The site includes product catalogs, secure payment processing, and educational content about Turkish coffee culture.',
+      image: 'from-amber-600 to-orange-700',
+      tech: ['React.js', 'Node.js', 'Stripe API'],
+      gradientFrom: '#d97706',
+      gradientTo: '#c2410c',
+      icon: <Utensils className="w-full h-full text-white" />,
+      status: 'Completed',
+      duration: '4 months',
+      link: 'https://mazagangy.com',
+      features: ['Product Catalog', 'Secure Payments', 'Coffee Education', 'Customer Reviews'],
+    },
+    {
+      id: 10,
+      title: 'Falcon Tours Germany',
+      category: 'Travel & Tourism',
+      type: 'Travel Agency Website',
+      description: 'A comprehensive travel website for Falcon-tours.de, offering German trips and travel services with booking functionality and detailed tour information.',
+      fullDescription: 'A full-featured travel agency website for Falcon Tours, specializing in German destinations. The platform includes tour packages, booking system, customer testimonials, and travel guides for various German cities and attractions.',
+      image: 'from-emerald-600 to-teal-700',
+      tech: ['Next.js', 'MongoDB', 'Payment Gateway'],
+      gradientFrom: '#059669',
+      gradientTo: '#0f766e',
+      icon: <Globe className="w-full h-full text-white" />,
+      status: 'Completed',
+      duration: '5 months',
+      link: 'https://falcon-tours.de',
+      features: ['Tour Booking', 'Payment Processing', 'Travel Guides', 'Customer Portal'],
+    },
   ]
 
   const categories = [
@@ -173,6 +224,8 @@ export default function ProjectsPortfolio() {
     'Live Streaming', 
     'Web Development',
     'Supply & Logistics',
+    'Civil Engineering',
+    'Travel & Tourism',
   ]
 
   return (
@@ -244,8 +297,8 @@ export default function ProjectsPortfolio() {
           className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16"
         >
           {[
-            { icon: <Code className="h-6 w-6" />, number: '7', label: 'Total Projects', color: 'from-blue-600 to-cyan-600' },
-            { icon: <Users className="h-6 w-6" />, number: '7+', label: 'Satisfied Clients', color: 'from-purple-600 to-pink-600' },
+            { icon: <Code className="h-6 w-6" />, number: '10', label: 'Total Projects', color: 'from-blue-600 to-cyan-600' },
+            { icon: <Users className="h-6 w-6" />, number: '10+', label: 'Satisfied Clients', color: 'from-purple-600 to-pink-600' },
             { icon: <Calendar className="h-6 w-6" />, number: '4', label: 'Years Experience', color: 'from-green-600 to-emerald-600' },
             { icon: <Award className="h-6 w-6" />, number: '100%', label: 'Success Rate', color: 'from-orange-600 to-red-600' },
           ].map((stat, index) => (
