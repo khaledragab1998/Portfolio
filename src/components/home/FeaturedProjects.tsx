@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Building, Utensils, Globe } from 'lucide-react'
+import { Building, Utensils, Globe, ExternalLink } from 'lucide-react'
+import Link from 'next/link'
 
 export default function FeaturedProjects() {
   const fadeInUp = {
@@ -29,6 +30,7 @@ export default function FeaturedProjects() {
       gradientFrom: '#475569',
       gradientTo: '#1e293b',
       icon: <Building className="w-full h-full" />,
+      link: 'https://tig-eg.com',
     },
     {
       title: 'Mazagangy Turkish Coffee Store',
@@ -40,6 +42,7 @@ export default function FeaturedProjects() {
       gradientFrom: '#d97706',
       gradientTo: '#c2410c',
       icon: <Utensils className="w-full h-full" />,
+      link: 'https://mazagangy.com',
     },
     {
       title: 'Falcon Tours Germany',
@@ -51,6 +54,7 @@ export default function FeaturedProjects() {
       gradientFrom: '#059669',
       gradientTo: '#0f766e',
       icon: <Globe className="w-full h-full" />,
+      link: 'https://falcon-tours.de',
     },
   ]
 
@@ -240,15 +244,21 @@ export default function FeaturedProjects() {
                     </div>
                   </div>
 
-                  <motion.button
-                    className="w-full py-3 rounded-xl font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                  <motion.a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 rounded-xl font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden block text-center"
                     style={{
                       background: `linear-gradient(135deg, ${project.gradientFrom}, ${project.gradientTo})`,
                     }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      <ExternalLink className="h-4 w-4" />
+                      View Project
+                    </span>
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                       animate={{ x: ['-100%', '100%'] }}
@@ -259,7 +269,7 @@ export default function FeaturedProjects() {
                         ease: 'easeInOut',
                       }}
                     />
-                  </motion.button>
+                  </motion.a>
                 </div>
 
                 <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -276,32 +286,34 @@ export default function FeaturedProjects() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <motion.button
-            className="px-10 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <span className="relative z-10 flex items-center gap-3">
-              View All Projects
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                →
-              </motion.span>
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl blur-lg"></div>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-              animate={{ x: ['-100%', '100%'] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                repeatDelay: 3,
-                ease: 'easeInOut',
-              }}
-            />
-          </motion.button>
+          <Link href="/projects">
+            <motion.button
+              className="px-10 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span className="relative z-10 flex items-center gap-3">
+                View All Projects
+                <motion.span
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  →
+                </motion.span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl blur-lg"></div>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                animate={{ x: ['-100%', '100%'] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 3,
+                  ease: 'easeInOut',
+                }}
+              />
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -210,7 +210,7 @@ export default function ProjectsPortfolio() {
       icon: <Package className="w-full h-full text-white" />,
       status: 'Completed',
       duration: '2 months',
-      link: 'http://www.globaladvice-eg.com/',
+      link: 'https://www.advice-eg.com/',
       features: ['Service Showcase', 'Contact Information', 'Responsive Design', 'About Us Section'],
     },
   ]
