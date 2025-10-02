@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Building2, Gamepad2, Package } from 'lucide-react'
+import { Building, Utensils, Globe } from 'lucide-react'
 
 export default function FeaturedProjects() {
   const fadeInUp = {
@@ -20,37 +20,37 @@ export default function FeaturedProjects() {
 
   const projects = [
     {
-      title: 'ERP System for 3D Engineering',
-      category: 'Enterprise Software',
+      title: 'TIG-EG Civil Engineering',
+      category: 'Civil Engineering',
       description:
-        'A comprehensive ERP system for a 3D engineering firm, comprising a License Manager, User Tracker, and full Documentation System.',
-      image: 'from-blue-500 to-cyan-500',
-      tech: ['C#', 'SQL Server', 'ASP.NET'],
-      gradientFrom: '#3b82f6',
-      gradientTo: '#06b6d4',
-      icon: <Building2 className="w-full h-full" />,
+        'A professional website for tig-eg.com, a civil engineering company showcasing their construction projects, services, and expertise in infrastructure development.',
+      image: 'from-slate-600 to-slate-800',
+      tech: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+      gradientFrom: '#475569',
+      gradientTo: '#1e293b',
+      icon: <Building className="w-full h-full" />,
     },
     {
-      title: 'Online Game Store Mobile App',
-      category: 'Mobile Application',
+      title: 'Mazagangy Turkish Coffee Store',
+      category: 'E-commerce',
       description:
-        'A mobile application for an online game store, providing users with a seamless browsing and purchasing experience.',
-      image: 'from-green-500 to-emerald-500',
-      tech: ['React Native', 'Node.js', 'Firebase'],
-      gradientFrom: '#10b981',
-      gradientTo: '#059669',
-      icon: <Gamepad2 className="w-full h-full" />,
+        'An elegant e-commerce website for Mazagangy.com, specializing in authentic Turkish coffee products with a focus on traditional brewing methods and premium quality.',
+      image: 'from-amber-600 to-orange-700',
+      tech: ['React.js', 'Node.js', 'Stripe API'],
+      gradientFrom: '#d97706',
+      gradientTo: '#c2410c',
+      icon: <Utensils className="w-full h-full" />,
     },
     {
-      title: 'Advice-eg.com Website',
-      category: 'Supply & Logistics',
+      title: 'Falcon Tours Germany',
+      category: 'Travel & Tourism',
       description:
-        'A professional corporate website for a public supplying company, showcasing their services, mission, and contact information with a modern design.',
-      image: 'from-orange-500 to-red-500',
-      tech: ['React.js', 'CSS3', 'JavaScript'],
-      gradientFrom: '#f97316',
-      gradientTo: '#ef4444',
-      icon: <Package className="w-full h-full" />,
+        'A comprehensive travel website for Falcon-tours.de, offering German trips and travel services with booking functionality and detailed tour information.',
+      image: 'from-emerald-600 to-teal-700',
+      tech: ['Next.js', 'MongoDB', 'Payment Gateway'],
+      gradientFrom: '#059669',
+      gradientTo: '#0f766e',
+      icon: <Globe className="w-full h-full" />,
     },
   ]
 
