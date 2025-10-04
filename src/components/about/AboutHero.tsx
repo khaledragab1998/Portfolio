@@ -54,14 +54,14 @@ export default function AboutHero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 lg:pt-28 pb-16">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="max-w-4xl mx-auto">
           
-          {/* Left Side - Details */}
+          {/* Main Content */}
           <motion.div
             variants={staggerContainer}
             initial="initial"
             animate="animate"
-            className="space-y-8"
+            className="space-y-8 text-center"
           >
             {/* Greeting & Title */}
             <motion.div variants={fadeInLeft} className="space-y-4">
@@ -189,89 +189,6 @@ export default function AboutHero() {
               </motion.button>
 
              
-            </motion.div>
-          </motion.div>
-
-          {/* Right Side - Photo */}
-          <motion.div
-            variants={fadeInRight}
-            className="relative flex justify-center lg:justify-end"
-          >
-            {/* Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-indigo-600/20 rounded-3xl blur-3xl transform rotate-6"></div>
-            <div className="absolute inset-0 bg-gradient-to-tl from-indigo-600/20 via-blue-600/20 to-purple-600/20 rounded-3xl blur-2xl transform -rotate-6"></div>
-            
-            {/* Photo Container */}
-            <motion.div
-              className="relative z-10 w-80 h-96 lg:w-96 lg:h-[480px]"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              {/* Main Photo Frame */}
-              <div className="relative w-full h-full rounded-3xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 p-1 shadow-2xl">
-                <div className="w-full h-full rounded-3xl bg-card overflow-hidden">
-                  {/* Placeholder for Photo */}
-                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center rounded-3xl">
-                    <div className="text-center space-y-4">
-                      <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white text-4xl font-bold mx-auto">
-                        B
-                      </div>
-                      <div className="text-muted-foreground">
-                        <p className="font-medium">Your Photo Here</p>
-                        <p className="text-sm">Professional Portrait</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
-              <motion.div
-                className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center text-white shadow-lg"
-                animate={{
-                  y: [0, -10, 0],
-                  rotate: [0, 5, -5, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              >
-                <Code className="h-8 w-8" />
-              </motion.div>
-
-              <motion.div
-                className="absolute -bottom-4 -right-4 w-14 h-14 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg"
-                animate={{
-                  y: [0, 10, 0],
-                  rotate: [0, -5, 5, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: 1,
-                }}
-              >
-                <Smartphone className="h-6 w-6" />
-              </motion.div>
-
-              <motion.div
-                className="absolute top-1/2 -right-8 w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white shadow-lg"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.8, 1, 0.8],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: 0.5,
-                }}
-              >
-                <Award className="h-6 w-6" />
-              </motion.div>
             </motion.div>
           </motion.div>
         </div>
